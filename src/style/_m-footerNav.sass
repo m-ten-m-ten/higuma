@@ -1,0 +1,23 @@
+.m-footerNav
+
+
+  li
+    +mediaquery-580
+      display: block
+      margin-left: 0
+      border-bottom: 1px solid $fontColor-inverse
+
+      &:last-child
+        border-bottom: 0
+
+
+  a
+    &:hover
+      opacity: 0.7
+
+    +mediaquery-580
+      display: block
+      width: 100%
+      padding: 1.2em 7% 1em 7%
+      text-align: center
+

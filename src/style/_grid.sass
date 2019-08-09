@@ -1,0 +1,50 @@
+$gridMargin: 10px
+
+.l-container
+  max-width: 1130px
+  margin-right: auto
+  margin-left: auto
+  overflow: hidden
+  box-sizing: content-box
+  padding: 0 7%
+
+
+.l-row
+  +inline-block-parent
+  margin-right: $gridMargin * -1
+  margin-left: $gridMargin * -1
+  box-sizing: content-box
+
+
+[class*="l-grid-"]
+  +inline-block
+  padding-left: $gridMargin
+  padding-right: $gridMargin
+  min-height: 1px
+
+
+@for $i from 1 through 12
+  .l-grid-#{$i}
+    width: (100% / 12) * $i
+
+
+.l-container--narrow
+  @extend.l-container
+  max-width: 786px
+  $gridMargin: 15px
+
+  .l-row
+    +clear-fix
+    margin-right: $gridMargin * -1
+    margin-left: $gridMargin * -1
+
+  [class*="l-grid-"]
+    padding-right: $gridMargin
+    padding-left: $gridMargin
+
+
+.l-container--full
+  @extend.l-container
+  max-width: 100%
+  padding: 0
+

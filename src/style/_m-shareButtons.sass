@@ -1,0 +1,29 @@
+.m-shareButtons
+  +inline-block-parent
+  text-align: center
+
+  +mediaquery-580
+    margin: 0 -15px
+    padding: 0 9%
+
+
+.m-shareButtons-item
+  +inline-block
+  margin: 0 15px
+
+  +mediaquery-700
+    margin: 0 5px
+
+  +mediaquery-580
+    width: 49.5%
+    margin: 5px 0
+    padding: 0 5px
+
+
+.m-shareButtons-item--line
+  @extend.m-shareButtons-item
+  display: none
+
+  +mediaquery-580
+    +inline-block
+

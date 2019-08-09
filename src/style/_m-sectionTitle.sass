@@ -1,0 +1,32 @@
+.m-sectionTitle
+  +clear-fix
+
+
+.m-sectionTitle-text
+  float: left
+  margin: 0
+  padding-bottom: 17px
+  line-height: 1
+  background: url('../media/sectionTitle-underLine@2x.png') no-repeat
+    size: 68px 8px
+    position: 0 bottom
+  color: $fontColor
+  font:
+    family: $fontFamily-specific
+    size: 30px
+    weight: normal
+  letter-spacing: $letterSpacing-title
+
+  +mediaquery-500
+    float: none
+    background-position: bottom
+    text-align: center
+
+
+.m-sectionTitle-button
+  float: right
+
+  +mediaquery-500
+    display: none
+
+

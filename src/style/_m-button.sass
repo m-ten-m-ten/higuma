@@ -1,0 +1,77 @@
+.m-button
+  +animation
+  display: inline-block
+  width: 162px
+  height: 46px
+  line-height: 46px + 2px
+  font-size: 1.4rem
+  color: $fontColor
+  border: 1px solid $fontColor
+  text-align: center
+  font-family: $fontFamily-specific
+  letter-spacing: $letterSpacing-title
+
+  &:hover
+    opacity: 1
+
+.m-shareButtons .m-button
+
+  +mediaquery-700
+    width: 150px
+    font-size: 13px
+
+  +mediaquery-580
+    width: 100%
+
+
+.m-button--more
+  @extend.m-button
+
+  background: url('../media/button-arrow@2x.png') no-repeat
+    size: 8px 12px
+    position: 140px 50%
+
+  &:hover
+    background-color: $fontColor
+    color: $fontColor-inverse
+    background-image: url('../media/button-arrow-hover@2x.png')
+
+
+.m-button--facebook
+  @extend.m-button
+  color: $facebook
+  border-color: $facebook
+
+  &:hover
+    color: $fontColor-inverse
+    background-color: $facebook
+
+
+.m-button--twitter
+  @extend.m-button
+  color: $twitter
+  border-color: $twitter
+
+  &:hover
+    color: $fontColor-inverse
+    background-color: $twitter
+
+
+.m-button--hatena
+  @extend.m-button
+  color: $hatena
+  border-color: $hatena
+
+  &:hover
+    color: $fontColor-inverse
+    background-color: $hatena
+
+.m-button--line
+  @extend.m-button
+  color: $line
+  border-color: $line
+
+  &:hover
+    color: $fontColor-inverse
+    background-color: $line
+

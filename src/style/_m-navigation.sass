@@ -1,0 +1,64 @@
+.m-navigation
+
+  ul
+    +inline-block-parent
+    margin: 0
+    padding: 0
+    list-style-type: none
+
+
+  li
+    +inline-block
+    margin-left: 40px
+
+    &:first-child
+      margin-left: 0
+
+
+  a
+    +animation
+    color: $fontColor-inverse
+    font-family: $fontFamily-specific
+    font-size: 14px
+    letter-spacing: $letterSpacing-title
+
+
+.m-navigation--header
+  @extend.m-navigation
+
+  transition:
+    duration: 600ms
+    timing-function: $easeInOutCubic
+
+  +mediaquery-main-visual
+    background-color: rgba(#000, 0.7)
+
+
+  li
+    +mediaquery-main-visual
+      display: block
+      margin: 0
+
+
+  a
+    padding-bottom: 8px
+    border-bottom: 2px solid transparent
+
+    &:hover
+      border-color: $fontColor-inverse
+      opacity: 1
+
+    +mediaquery-main-visual
+      display: block
+      padding: 15px 7%
+      border-bottom: 1px solid $fontColor-inverse
+
+
+.m-navigation--header-toggle
+  margin: 0
+  padding: 15px 7%
+  color: $fontColor-sub
+  background: url('../media/navigation-toggle@2x.png') no-repeat 93% $bgColor-white
+    size: 15px 11px
+  cursor: pointer
+

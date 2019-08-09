@@ -1,0 +1,49 @@
+.m-concept
+  margin: 0 auto
+
+
+.m-concept-title
+  text-align: center
+  font-size: 44px
+
+  +mediaquery-smartphone
+    font-size: 36px
+  font-weight: normal
+  letter-spacing: $letterSpacing-title
+  margin: 0 auto
+
+
+.m-concept-read
+  max-width: 550px
+  font-size: 20px
+  margin: 70px auto 0 auto
+
+  +mediaquery-smartphone
+    font-size: 15px
+
+  > *
+    margin-top: 1em
+    margin-bottom: 0
+
+
+.m-concept-read--index
+  @extend.m-concept-read
+  max-width: 370px
+  margin-top: 50px
+
+  +mediaquery-smartphone
+    margin-top: 30px
+
+
+.m-concept-siteLogo
+  +text-replace
+  width: 211px
+  height: 54px
+  margin: 35px auto
+  background: url('../media/concept-siteLogo@2x.png') no-repeat
+    size: 211px 54px
+
+  +mediaquery-smartphone
+    margin: 15px 0
+    transform: scale(0.7)
+    transform-origin: 0 50%
