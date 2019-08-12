@@ -1,18 +1,20 @@
 .m-button
   +animation
   display: inline-block
-  width: 162px
-  height: 46px
-  line-height: 46px + 2px
-  font-size: 1.4rem
-  color: $fontColor
-  border: 1px solid $fontColor
+  padding: 0 10px
+  color: $fontColor-inverse
+  background-color: $mainColor
+  border: 1px solid $mainColor
   text-align: center
   font-family: $fontFamily-specific
   letter-spacing: $letterSpacing-title
+  border-radius: 5px
+
 
   &:hover
     opacity: 1
+    color: $mainColor
+    background-color: $fontColor-inverse
 
 .m-shareButtons .m-button
 
@@ -22,6 +24,13 @@
 
   +mediaquery-580
     width: 100%
+
+.m-button--access
+  @extend.m-button
+
+  i
+    margin-right: 5px
+    margin-left: 5px
 
 
 .m-button--more
