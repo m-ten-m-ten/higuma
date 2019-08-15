@@ -50,32 +50,23 @@
 
 // Media Queries Settings
 // Retina
+
+=mediaquery($size)
+  @media only screen and (max-width: $size)
+    @content
+
 =mediaquery-retina
   @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx)
     @content
 
-// PC Large
-=mediaquery-pc-large
-  @media only screen and (min-width: $breakpoint-pc-large)
-    @content
-
 // PC
 =mediaquery-pc
-  @media only screen and (min-width: $breakpoint-pc) and (max-width: $breakpoint-pc-large - 1px)
+  @media only screen and (max-width: $breakpoint-pc)
     @content
 
-// Small pc
-=mediaquery-pc-small
-  @media only screen and (max-width: $breakpoint-pc-large - 1px)
-    @content
-
-// Tablet
-=mediaquery-tablet
-  @media only screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-pc - 1px)
-    @content
 
 // Small Tablet
-=mediaquery-tablet-small
+=mediaquery-tablet
   @media only screen and (max-width: $breakpoint-tablet)
     @content
 

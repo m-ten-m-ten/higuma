@@ -19,46 +19,91 @@
     +animation
     color: $fontColor-inverse
     font-family: $fontFamily-specific
-    font-size: 14px
+    font-size: 1.4rem
     letter-spacing: $letterSpacing-title
 
 
 .m-navigation--header
   @extend.m-navigation
-
+  position: fixed
+  top: 60px
+  width: 100%
+  margin-left: -10px
   transition:
     duration: 600ms
     timing-function: $easeInOutCubic
 
-  +mediaquery-main-visual
-    background-color: rgba(#000, 0.7)
+
+  ul
+    display: none
 
 
   li
-    +mediaquery-main-visual
-      display: block
-      margin: 0
-
+    display: block
+    margin: 0
+    background-color: $mainColor
+    border-bottom: 1px solid #eee
 
   a
-    padding-bottom: 8px
-    border-bottom: 2px solid transparent
+    display: block
+    position: relative
+    padding: 10px 15px 10px 40px;
+    font-size: 1.6rem
 
-    &:hover
-      border-color: $fontColor-inverse
-      opacity: 1
-
-    +mediaquery-main-visual
-      display: block
-      padding: 15px 7%
-      border-bottom: 1px solid $fontColor-inverse
-
+  i
+    position: absolute
+    top: 15px
+    left: 15px
 
 .m-navigation--header-toggle
-  margin: 0
-  padding: 15px 7%
-  color: $fontColor-sub
-  background: url('../media/navigation-toggle@2x.png') no-repeat 93% $bgColor-white
-    size: 15px 11px
+  position: fixed
+  top: 10px
+  right: 10px
+  width: 45px
+  height: 45px
+  background-color: $mainColor
+  border-radius: 23px
   cursor: pointer
+
+
+  .m-navigation--header-toggle-bar,
+  &::before,
+  &::after
+    +animation
+    display: block
+    position: absolute
+    top: 21px
+    left: 11px
+    width: 23px
+    height: 3px
+    background-color: $fontColor-inverse
+
+  &::before
+    transform: translate(0, 9px)
+    content: ""
+
+  &::after
+    transform: translate(0, -9px)
+    content: ""
+
+  &.is-active .m-navigation--header-toggle-bar
+    opacity: 0
+
+  &.is-active::before
+    transform: rotate(-45deg)
+
+  &.is-active::after
+    transform: rotate(45deg)
+
+
+.m-navigation--header-close
+  display: none
+
+  &.is-active
+    display: block
+    padding: 10px
+    background-color: $mainColor-darker
+    color: $fontColor-inverse
+    text-align: center
+    cursor: pointer
 

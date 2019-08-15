@@ -1,26 +1,47 @@
 .l-header
   +clear-fix
+  margin-top: 5px
+  margin-bottom: 5px
+
+
+.m-copyright
+  display: none
   
-  .m-siteLogo
+  +mediaquery-smartphone
+    display: block
+
+
+.m-siteLogo
     float: left
 
 
-  .m-header-info
-    float: right
-    text-align: right
+.m-header-info
+  +clear-fix
+  float: right
 
-  
-  .m-telnum
-    margin-bottom: 3px
+  +mediaquery(645px)
+    float: none
 
-
-  .m-button--access
-  
-
-  .m-navigation--header
+  +mediaquery-smartphone
     display: none
-    float: right
 
-    +mediaquery-smartphone
-      display: block
+
+.m-telnum
+  display: block
+  margin-bottom: 3px
+
+  +mediaquery(645px)
+    float: left
+
+
+.m-button--access
+  float: right
+
+
+.m-navigation--header
+  display: none
+
+  +mediaquery-smartphone
+    display: block
+    z-index: 10
 

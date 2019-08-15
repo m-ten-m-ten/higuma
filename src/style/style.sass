@@ -1,9 +1,11 @@
 @charset "utf-8"
 
+
 // font-family
 // ----------------------------------------------------------------------
 $fontFamily: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
 $fontFamily-specific: 'Lato', sans-serif
+
 
 // カラー
 // ----------------------------------------------------------------------
@@ -12,6 +14,7 @@ $fontColor-inverse: #fff
 $fontColor-sub: #656c6e
 
 $mainColor: #3883b2
+$mainColor-darker: #03547D
 
 $facebook: #4871A9
 $twitter: #70BDD3
@@ -25,14 +28,18 @@ $bgColor-footer: #656C6E
 
 $letterSpacing-title: 0.1em
 
+
 // ブレークポイント
 // ----------------------------------------------------------------------
-$breakpoint-pc-large: 1200px
-$breakpoint-pc: 980px
+$breakpoint-pc: 1130px
 $breakpoint-tablet: 768px
 $breakpoint-smartphone: 480px
-$breakpoint-mainVisual-switch: 900px
+$breakpoint-se: 360px
+$breakpoint-mainVisual-switch: 600px
 
+
+// インポート
+// ----------------------------------------------------------------------
 @import "normalize"
 @import "mixin"
 @import "base"
@@ -54,5 +61,5 @@ $breakpoint-mainVisual-switch: 900px
 @import "l-footerNav"
 @import "m-footerNav"
 @import "l-footer"
-@import "m-copyRight"
+@import "m-copyright"
 @import "m-pagenation"

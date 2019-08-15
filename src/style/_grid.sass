@@ -1,12 +1,16 @@
 $gridMargin: 10px
 
+
 .l-container
   max-width: 1130px
   margin-right: auto
   margin-left: auto
   overflow: hidden
   box-sizing: content-box
-  padding: 0 7%
+
+  +mediaquery-pc
+    margin-right: 10px
+    margin-left: 10px
 
 
 .l-row
