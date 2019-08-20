@@ -13,6 +13,15 @@ $gridMargin: 10px
     margin-left: 10px
 
 
+.l-container--pcFull
+  
+  @extend.l-container
+  
+  +mediaquery-pc
+    margin-right: 0
+    margin-left: 0
+
+
 .l-row
   +inline-block-parent
   margin-right: $gridMargin * -1
@@ -37,10 +46,12 @@ $gridMargin: 10px
   max-width: 786px
   $gridMargin: 15px
 
+
   .l-row
     +clear-fix
     margin-right: $gridMargin * -1
     margin-left: $gridMargin * -1
+
 
   [class*="l-grid-"]
     padding-right: $gridMargin

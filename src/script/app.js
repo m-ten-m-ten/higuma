@@ -1,58 +1,58 @@
 $(function(){
 
-// mainVisualの画像の縦横比を取得
-var img = document.getElementById('mainVisual-base-image');
+// // mainVisualの画像の縦横比を取得
+// var img = document.getElementById('mainVisual-base-image');
 
-if (img) {
-  var imgRatio = img.naturalWidth / img.naturalHeight;
-  var fileName = location.pathname.split('/').pop();
+// if (img) {
+//   var imgRatio = img.naturalWidth / img.naturalHeight;
+//   var fileName = location.pathname.split('/').pop();
 
-  $(window).load(function() {
-    mainVisualAdjust();
-  });
+//   $(window).load(function() {
+//     mainVisualAdjust();
+//   });
 
-  $(window).resize(function() {
-    mainVisualAdjust();
-  });
-}
+//   $(window).resize(function() {
+//     mainVisualAdjust();
+//   });
+// }
 
-// mainVisualの画像表示変換
-  function mainVisualAdjust() {
-    w = $(window).width();
+// // mainVisualの画像表示変換
+//   function mainVisualAdjust() {
+//     w = $(window).width();
 
-    if(fileName == "index.html" || fileName == "") {
-      if (w > 915) {
-        h = $(window).height() - 60;
-      } else {
-        h = $(window).height() + 20;
-      }
+//     if(fileName == "index.html" || fileName == "") {
+//       if (w > 915) {
+//         h = $(window).height() - 60;
+//       } else {
+//         h = $(window).height() + 20;
+//       }
 
-      $('.m-mainVisual').css('height', h + 'px');
+//       $('.m-mainVisual').css('height', h + 'px');
 
-    } else {
-      h = parseInt($('.m-mainVisual').css('height'));
-    }
+//     } else {
+//       h = parseInt($('.m-mainVisual').css('height'));
+//     }
 
-    if(w / h < imgRatio) {
-      imgWidth = h * imgRatio;
-      $('.m-mainVisual-image img').css({
-        'margin-top': '0',
-        'left': '50%',
-        'margin-left': -imgWidth / 2 + 'px',
-        'width': imgWidth + 'px',
-        'height': h + 'px'
-     });
-    } else {
-      imgHeight = w / imgRatio;
-      $('.m-mainVisual-image img').css({
-        'margin-top': -(imgHeight - h) / 2 + 'px',
-        'left': '0',
-        'margin-left': '0',
-        'width': '100%',
-        'height': 'auto'
-      });
-    }
-  }
+//     if(w / h < imgRatio) {
+//       imgWidth = h * imgRatio;
+//       $('.m-mainVisual-image img').css({
+//         'margin-top': '0',
+//         'left': '50%',
+//         'margin-left': -imgWidth / 2 + 'px',
+//         'width': imgWidth + 'px',
+//         'height': h + 'px'
+//      });
+//     } else {
+//       imgHeight = w / imgRatio;
+//       $('.m-mainVisual-image img').css({
+//         'margin-top': -(imgHeight - h) / 2 + 'px',
+//         'left': '0',
+//         'margin-left': '0',
+//         'width': '100%',
+//         'height': 'auto'
+//       });
+//     }
+//   }
 
 
 
@@ -95,13 +95,13 @@ if (img) {
     }
   });
 
-// レスポンシブ対応の高機能スライダー「swiper」の設定
-  var mySwiper = new Swiper ('.swiper-container', {
-    effect: "fade",
-    loop: true,
-    speed: 1500,
-    autoplay: 5000
-  });
+// // レスポンシブ対応の高機能スライダー「swiper」の設定
+//   var mySwiper = new Swiper ('.swiper-container', {
+//     effect: "fade",
+//     loop: true,
+//     speed: 1500,
+//     autoplay: 5000
+//   });
 
 // ページトップリンク
   $('#js-backTop').click(function() {
