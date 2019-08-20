@@ -54,33 +54,34 @@ if (img) {
     }
   }
 
+
+
 // ナビゲーションメニューのアコーディオン
-  $('').click(function() {
-    var $navigation = $('#header .m-navigation ul');
+  var $navigation = $('.m-navigation--header ul');
+  var $navigationClose = $('.m-navigation--header-close');
+  var $navigationToggle = $('.m-navigation--header-toggle');
+
+  $navigationToggle.click(function() {
+
     if($navigation.hasClass('open')) {
       $navigation.slideUp();
       $navigation.removeClass('open');
+      $navigationClose.removeClass('is-active');
       $(this).removeClass('is-active');
     } else {
       $navigation.slideDown();
       $navigation.addClass('open');
+      $navigationClose.addClass('is-active');
       $(this).addClass('is-active');
     }
   });
 
-  $('.js-navigation').click(function() {
-    if($(this).hasClass('is-open')) {
-      $(this).removeClass('is-open');
-    } else {
-      $(this).addClass('is-open');
-    }
-  });
   // アコーディオンオープン時に別途close用の要素が出てくる場合
-  $('#navigation-close').click(function(){
-    var $navigation = $('#header .m-navigation ul');
+  $('.m-navigation--header-close').click(function(){
     $navigation.slideUp();
     $navigation.removeClass('open');
-    $('.m-navigation-toggle').removeClass('is-active');
+    $navigationToggle.removeClass('is-active');
+    $(this).removeClass('is-active');
   });
 
 // 開いているページのファイル名と同じファイル名をhrefに持つ要素にactiveクラス追加。
@@ -111,6 +112,5 @@ if (img) {
   });
 
 });
-
 
 
