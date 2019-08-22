@@ -57,9 +57,9 @@ $(function(){
 
 
 // ナビゲーションメニューのアコーディオン
-  var $navigation = $('.m-navigation--header ul');
-  var $navigationClose = $('.m-navigation--header-close');
-  var $navigationToggle = $('.m-navigation--header-toggle');
+  var $navigation = $('.m-headerNav ul');
+  var $navigationClose = $('.m-headerNav-close');
+  var $navigationToggle = $('.m-headerNav-toggle');
 
   $navigationToggle.click(function() {
 
@@ -77,7 +77,7 @@ $(function(){
   });
 
   // アコーディオンオープン時に別途close用の要素が出てくる場合
-  $('.m-navigation--header-close').click(function(){
+  $('.m-headerNav-close').click(function(){
     $navigation.slideUp();
     $navigation.removeClass('open');
     $navigationToggle.removeClass('is-active');

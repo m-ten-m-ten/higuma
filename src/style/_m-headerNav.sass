@@ -1,30 +1,4 @@
-.m-navigation
-
-  ul
-    +inline-block-parent
-    margin: 0
-    padding: 0
-    list-style-type: none
-
-
-  li
-    +inline-block
-    margin-left: 40px
-
-    &:first-child
-      margin-left: 0
-
-
-  a
-    +animation
-    color: $fontColor-inverse
-    font-family: $fontFamily-specific
-    font-size: 1.4rem
-    letter-spacing: $letterSpacing-title
-
-
-.m-navigation--header
-  @extend.m-navigation
+.m-headerNav
   position: fixed
   top: 60px
   width: 100%
@@ -47,7 +21,8 @@
   a
     display: block
     position: relative
-    padding: 10px 15px 10px 40px;
+    padding: 10px 15px 10px 40px
+    color: $fontColor-inverse
     font-size: 1.6rem
 
   i
@@ -55,7 +30,7 @@
     top: 15px
     left: 15px
 
-.m-navigation--header-toggle
+.m-headerNav-toggle
   position: fixed
   top: 10px
   right: 10px
@@ -66,7 +41,7 @@
   cursor: pointer
 
 
-  .m-navigation--header-toggle-bar,
+  .m-headerNav-toggle-bar,
   &::before,
   &::after
     +animation
@@ -86,7 +61,7 @@
     transform: translate(0, -9px)
     content: ""
 
-  &.is-active .m-navigation--header-toggle-bar
+  &.is-active .m-headerNav-toggle-bar
     opacity: 0
 
   &.is-active::before
@@ -96,7 +71,7 @@
     transform: rotate(45deg)
 
 
-.m-navigation--header-close
+.m-headerNav-close
   display: none
 
   &.is-active
