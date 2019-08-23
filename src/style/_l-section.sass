@@ -1,12 +1,18 @@
 .l-section
   width: 100%
-  background-color: $bgColor-base
-  padding-top: 110px
-  padding-bottom: 110px
+  background-color: $bgColor-white
 
-  +mediaquery-500
-    padding-top: 70px
-    padding-bottom: 70px
+
+.l-section--timeTable
+  @extend.l-section
+  float: right
+  width: 440px
+
+
+.l-section--info
+  @extend.l-section
+  float: left
+  width: calc(100% - 440px - 15px)
 
 
 .l-section--product

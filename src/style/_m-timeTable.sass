@@ -1,0 +1,60 @@
+.m-timeTable
+  text-align: center
+  border-top: 1px solid $mainColor
+
+  p
+    margin-top: 5px
+    margin-bottom: 5px
+
+  table
+    border-collapse: collapse
+    text-align: center
+    font-weight: bold
+    margin-left: auto
+    margin-right: auto
+    border: 1px solid #aaa
+    font-size: 1.4rem
+
+  tr:nth-of-type(even)
+    background-color: $mainColor-lighter
+
+  th,
+  td
+    padding: 10px 15px
+    border: 1px solid #ccc
+
+    +mediaquery-smartphone
+      padding: 5px 10px
+      font-weight: normal
+
+  th
+    background-color: $mainColor
+    color: $fontColor-inverse
+
+  .open,
+  .rest,
+  .telnum a,
+  .rinji-rest-title
+    color: $mainColor
+
+  .rest,
+  .rinji-rest-title
+    font-size: 1.8rem
+    font-weight: bold
+
+  .telnum a
+    font-size: 2.4rem
+    letter-spacing: 3px
+
+  .rinji-rest-list
+    display: inline-block
+    margin-right: auto
+    margin-left: auto
+    text-align: left
+
+.m-timeTable-title
+  display: inline-block
+  padding-top: 10px
+  padding-bottom: 5px
+  border-top: 5px solid $mainColor
+  color: $mainColor

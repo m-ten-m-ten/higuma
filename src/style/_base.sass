@@ -23,14 +23,33 @@ a
   &:hover
     opacity: 0.7
 
+p
+  margin: 15px 0
+
+
 h1, h2, h3, h4, h5, h6
   letter-spacing: $letterSpacing-title
 
+small
+  line-height: 1.0
 
 // margin
+.mr0
+  margin-right: 0
+
 .mr5
   margin-right: 5px
 
 .ml5
   margin-left: 5px
 
+.forSP
+  display: none
+  +mediaquery-smartphone
+    display: block
+
+
+// font awesome
+.fa,
+.fas
+  margin-right: 5px

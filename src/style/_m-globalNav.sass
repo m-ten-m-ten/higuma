@@ -1,14 +1,16 @@
 .m-globalNav
-  
+
+
   ul
     +inline-block-parent
-    background-image: linear-gradient(to top, rgba(132, 132, 132, 0.11), rgba(202, 202, 202, 0.11))
+    margin-bottom: 10px
     box-shadow: 0 0 8px rgba(6, 0, 1, 0.26)
 
 
   li
     +inline-block
     width:  (100% / 6)
+    background-image: linear-gradient(to top, rgba(132, 132, 132, 0.11), rgba(202, 202, 202, 0.11))
     border-left: 1px solid #ccc
 
     &:first-child
@@ -40,16 +42,16 @@
 
   i
     display: block
+    margin-right: 0
     margin-bottom: 10px
     font-size: 3rem
     font-weight: bold
     color: $mainColor
 
     +mediaquery(610px)
-      display: inline
+      display: inline-block
       margin-right: 5px
       font-size: 2rem
-
 
 
   .access,
