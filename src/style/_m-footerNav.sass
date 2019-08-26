@@ -1,23 +1,25 @@
 .m-footerNav
 
+  ul
+    +inline-block-parent
 
   li
-    +mediaquery-580
-      display: block
-      margin-left: 0
-      border-bottom: 1px solid $fontColor-inverse
+    +inline-block
+    margin-right: 30px
 
-      &:last-child
-        border-bottom: 0
-
+    +mediaquery-smartphone
+      margin-right: 25px
 
   a
-    &:hover
-      opacity: 0.7
+    color: $fontColor-inverse
+    font-size: 1.4rem
 
-    +mediaquery-580
-      display: block
-      width: 100%
-      padding: 1.2em 7% 1em 7%
-      text-align: center
+    &:before
+      margin-right: 5px
+      font-family: "Font Awesome 5 Free"
+      content: "\f0da"
+      font-weight: 900
+
+  i
+    display: none
 

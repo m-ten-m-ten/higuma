@@ -1,10 +1,36 @@
 footer.l-footer
-  .l-container--narrow
 
+  .l-footer-info.l-container--full
 
-    .m-siteLogo--small
-      a(href="#") FooterLogo
+    .l-container
 
+      .m-siteLogo
+        a(href="index.html")
+          img(src="media/higuma-footer-logo.png" alt="")
 
-    .m-copyRight
-      small Copyright &copy; コピーライトタイトル All rights reserved.
+      p
+        |〒183-0013 府中市小柳町1丁目21-1
+        br
+        |午前 9：00 ～ 12：00
+        span.overSP  / 
+        br.forSP
+        |午後 16：00 ～ 19：00
+        br
+        |予約診療(火・木) 14：00 ～ 16：00
+        br
+        |休診日 土曜日 / 日曜日 / 祝祭日
+        br
+        |TEL 042-336-1908
+        br
+
+      nav.m-footerNav
+        include /_includes/_m-navigation.pug
+
+  .l-footer-copyRight.l-container--full
+
+    .l-container
+
+      p.m-copyRight--footer
+        |Copyrights © HIGUMA osteopathic clinic.
+        br.forSP
+        |All Rights Reserved

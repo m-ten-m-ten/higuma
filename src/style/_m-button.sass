@@ -1,30 +1,50 @@
 .m-button
   +animation
   display: inline-block
-  padding: 0 10px
+  padding: 10px 20px
   color: $fontColor-inverse
   background-color: $mainColor
   border: 3px solid $mainColor
   text-align: center
   border-radius: 5px
 
-
   &:hover
-    opacity: 1
     color: $mainColor
     background-color: $fontColor-inverse
 
-.m-shareButtons .m-button
 
-  +mediaquery-700
-    width: 150px
-    font-size: 13px
+.m-button--time
+  @extend.m-button
+  padding: 3px 8px
+  font-size: 1.3rem
 
-  +mediaquery-580
-    width: 100%
+  &:hover
+    color: $fontColor-inverse
+    background-color: $mainColor
+
+  &::before
+    display: inline-block
+    font-family: "Font Awesome 5 Free"
+    font-weight: 900
+    content: "\f783"
+    margin-right: 5px
+
+
+.m-button--info
+  @extend.m-button
+  display: block
+  text-align: left
+  background-color: $fontColor-inverse
+  color: $mainColor
+  border-color: $mainColor-lighter
+
+  &:hover
+    background-color: $mainColor-lighter
+
 
 .m-button--access
   @extend.m-button
+  padding: 0 10px
 
 
 .m-button--more

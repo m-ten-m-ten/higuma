@@ -4,47 +4,47 @@
   margin-bottom: 5px
 
 
-.m-copyright
-  display: none
-  
-  +mediaquery-smartphone
-    display: block
-
-
-.m-siteLogo
-    float: left
-    padding-top: 10px
-
-    +mediaquery(645px)
-      padding-top: 0
-
-
-.m-header-info
-  +clear-fix
-  float: right
-
-  +mediaquery(645px)
-    float: none
-
-  +mediaquery-smartphone
+  .m-copyRight--header
     display: none
 
-
-.m-telnum
-  display: block
-
-  +mediaquery(645px)
-    float: left
+    +mediaquery-smartphone
+      display: block
 
 
-.m-button--access
-  float: right
+  .m-siteLogo
+      float: left
+      padding-top: 10px
+
+      +mediaquery(645px)
+        padding-top: 0
 
 
-.m-headerNav
-  display: none
+  .m-header-info
+    +clear-fix
+    float: right
 
-  +mediaquery-smartphone
+    +mediaquery(645px)
+      float: none
+
+    +mediaquery-smartphone
+      display: none
+
+
+  .m-telnum
     display: block
-    z-index: 10
+
+    +mediaquery(645px)
+      float: left
+
+
+  .m-button--access
+    float: right
+
+
+  .m-headerNav
+    display: none
+
+    +mediaquery-smartphone
+      display: block
+      z-index: 10
 

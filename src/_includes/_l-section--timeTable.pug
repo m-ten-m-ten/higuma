@@ -5,65 +5,55 @@ section.l-section--timeTable
     .m-timeTable-title.l-full-row-element-tb
       h3 診療時間
 
-    table
-      thead
-        tr
-          th
-            | 診察
-            br.forSP
-            | 時間
-          th 月
-          th 火
-          th 水
-          th 木
-          th 金
-      tbody
-        tr
-          td
-            | 9:00〜
-            br.forSP
-            | 12:00
-          td.open ●
-          td.open ●
-          td.open ●
-          td.open ●
-          td.open ●
-        tr
-          td
-            small ※予約診療
-            br
-            | 14:00〜
-            br.forSP
-            | 16:00
-          td ×
-          td.open ◎
-          td ×
-          td.open ◎
-          td ×
-        tr
-          td
-            | 16:00〜
-            br.forSP
-            | 19:00
-          td.open ●
-          td.open ●
-          td.open ●
-          td.open ●
-          td.open ●
-        tr
-          td(colspan="6")
-            p.rest 休診日　土曜日 / 日曜日 / 祝祭日
-            p ※予約診療をご希望の方は、当日の午前中までにご連絡下さい。
-            p.telnum
-              a(href="tel:0423361908")
-                i.fa.fa-phone.fa-rotate-90
-                | 042-336-1908
-        tr
-          td(colspan="6")
-            p.rinji-rest-title
-              i.fas.fa-calendar-alt
-              | 8月の臨時休業
-            // <p>月の臨時休業はありません。</p>
-            ul.rinji-rest-list
-              li 8月2日（金）午後
-              li 8月13日（火）
+    .m-timeTable-content
+      table
+        thead
+          tr
+            th 診察時間
+            th 月
+            th 火
+            th 水
+            th 木
+            th 金
+        tbody
+          tr
+            td 9:00〜12:00
+            td.open ●
+            td.open ●
+            td.open ●
+            td.open ●
+            td.open ●
+          tr
+            td
+              small ※予約診療
+              br
+              | 14:00〜16:00
+            td ×
+            td.open ◎
+            td ×
+            td.open ◎
+            td ×
+          tr
+            td 16:00〜19:00
+            td.open ●
+            td.open ●
+            td.open ●
+            td.open ●
+            td.open ●
+          tr
+            td(colspan="6")
+              p.rest 休診日　土曜日 / 日曜日 / 祝祭日
+              p ※予約診療をご希望の方は、当日の午前中までにご連絡下さい。
+              p.telnum
+                a(href="tel:0423361908")
+                  i.fa.fa-phone.fa-rotate-90
+                  | 042-336-1908
+          tr
+            td(colspan="6")
+              p.rinji-rest-title
+                i.fas.fa-calendar-alt
+                | 8月の臨時休業
+              // <p>月の臨時休業はありません。</p>
+              ul.rinji-rest-list
+                li 8月2日（金）午後
+                li 8月13日（火）

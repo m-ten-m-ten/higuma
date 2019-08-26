@@ -1,18 +1,28 @@
 .l-section
   width: 100%
   background-color: $bgColor-white
+  margin-bottom: 30px
 
 
 .l-section--timeTable
   @extend.l-section
   float: right
   width: 440px
+  margin-right: auto
+  margin-left: auto
 
+  +mediaquery-tablet
+    float: none
+    width: 100%
 
 .l-section--info
   @extend.l-section
   float: left
   width: calc(100% - 440px - 15px)
+
+  +mediaquery-tablet
+    float: none
+    width: 100%
 
 
 .l-section--product
