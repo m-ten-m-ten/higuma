@@ -1,0 +1,87 @@
+//- menu.pug
+
+extends /_includes/_layout.pug
+
+block var
+  - var pageName = "施術・料金表";
+  - var description = "";
+  - var pageImg = "media/higuma-menu.jpg";
+
+block mainSection
+
+  h2#section 料金表
+
+  h3#section-1 保険診療
+
+  p 各種保険取り扱いしております。
+  table
+    thead
+      tr
+        th 負担割合
+        th 初・再診時
+        th 2回目以降
+    tbody
+      tr
+        td 1割
+        td 300円前後
+        td 150円前後
+      tr
+        td 2割
+        td 600円前後
+        td 250円前後
+      tr
+        td 3割
+        td 900円前後
+        td 400円前後
+  ul
+    li お持ちの保険証・症状により料金が異なります。
+    li その他、テーピング等は実費料金となります。
+    li 保険適用の症状についてはお気軽にご相談下さい。
+
+  h3#section-2 保険外診療
+
+  table
+    thead
+      tr
+        th(colspan="2") 施術内容
+        th 料金
+    tbody
+      tr
+        td(colspan="2") 鍼治療
+        td 2,500円前後
+      tr
+        td(colspan="2") 灸治療1荘
+        td 50円
+      tr
+        td(rowspan="3") マッサージ
+        td 10分
+        td 1,000円
+      tr
+        td 20分
+        td 2,000円
+      tr
+        td 30分
+        td 2,700円
+
+  h2#section-3 訪問医療について
+
+  p ご自宅に訪問しマッサージや機能訓練、運動療法、鍼・灸を行います。
+  p 対象症状
+  ul
+    li 寝たきりで外出が困難な方
+    li ぎっくり腰等で疼痛がひどく、通院が困難な場合など
+  p ※この治療は医療保険を使うので介護保険とは別に受けることが出来ます。
+  p 介護保険でリハビリを受けている方や、介護認定を取れなかった方もご相談ください。
+
+  h2#section-4 鍼灸治療
+  p
+    img.fl-r(src="img/higuma-hari.jpg" alt="")
+  p 対象症状
+  ul
+    li 腰痛症
+    li リウマチ
+    li 五十肩
+    li 神経痛
+    li 頚腕症候群
+    li 頚椎捻挫後遺症(ムチウチ)等
+  p ※医師から鍼灸治療の承諾が得られた場合には、保険を利用して鍼・灸治療を受けることが出来ます。

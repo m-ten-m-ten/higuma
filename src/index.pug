@@ -1,33 +1,15 @@
 //- index.pug
 
-- var pageName = "ホーム";
-- var description = "多磨霊園駅からゆっくり歩いて3分のひぐま整骨院・鍼灸治療院のホームページです。";
+extends /_includes/_layout.pug
 
-doctype html
-html
-  //- head
-  include /_includes/_head.pug
-  body
+block var
+  - var pageName = "ホーム";
+  - var description = "多磨霊園駅からゆっくり歩いて3分のひぐま整骨院・鍼灸治療院のホームページです。";
 
-    //- header
-    include /_includes/_l-header.pug
 
-    //- mainVisual
-    include /_includes/_l-mainVisual-index.pug
-
-    //- globalNav
-    include /_includes/_l-globalNav.pug
-
-    .l-container
-
-      //- l-section--timeTable
-      include /_includes/_l-section--timeTable.pug
-
-      //- l-section--info
-      include /_includes/_l-section--info.pug
-
-    //- footer
-    include /_includes/_l-footer.pug
-
-    //- script
-    include /_includes/_script.pug
+block mainSection
+  .l-container
+    //- l-section--timeTable
+    include /_includes/_l-section--timeTable.pug
+    //- l-section--info
+    include /_includes/_l-section--info.pug
