@@ -1,0 +1,11 @@
+.
+  <?php
+  session_start();
+  //入力内容を持たないアクセスやURLからのアクセスは入力画面へ遷移
+  if (!isset($_SESSION['input_data'])) {
+  header('Location:form.php');
+  exit();
+  }
+  $_POST = $_SESSION['input_data'];
+  unset($_SESSION['input_data']);
+  ?>

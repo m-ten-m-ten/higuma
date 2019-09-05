@@ -1,4 +1,4 @@
-//- menu.pug
+//- form.pug
 extends /_includes/_layout.pug
 
 block var
@@ -8,43 +8,40 @@ block var
 
 block mainSection
 
-  h3 個人情報の取り扱いについて
+  h2 個人情報の取り扱いについて
   ul
     li 当院はお客様の個人情報について、お客様の承諾が無い限り第三者に開示、提供をいたしません。（但し、法令により開示を求められた場合を除きます。）
     li 客様から個人情報をご提供して頂き、お客様へのサービスにご利用させて頂く場合があります。その目的以外には利用いたしません。
     li ご提供頂いた個人情報は、管理責任者が適切な管理を行なうとともに、漏洩や紛失等の防止に努めます。
 
-  h3 情報のご入力
+  h2 情報のご入力
   .m-form
     form(action="form.php" method="post")
 
 
       .m-form-row
-        p.m-form-title.m-form-title-email.required メールアドレス
+        p.m-form-title--email.m-form-required メールアドレス
         .m-form-input
-          input.email-input(type="text" name="email" value!=" <?php echo isset($_POST['email']) ? h($_POST['email']) : ''; ?>" autocomplete="OFF")
-          p.email-conf ※お間違えのない様、ご確認ください。
+          input.email-input(type="text" name="email" value!="<?php echo isset($_POST['email']) ? h($_POST['email']) : ''; ?>" autocomplete="OFF")
+          p.email-caution ※お間違えのない様、ご確認ください。
           .
             <?php echo isset($error_message['email']) ? p($error_message['email']) : ''; ?>
 
 
       .m-form-row
-        p.m-form-title.required お名前
-
+        p.m-form-title.m-form-required お名前
         .m-form-input
-
-          input(type="text" name="name" value!=" <?php echo isset($_POST['name']) ? h($_POST['name']) : ''; ?>" autocomplete="OFF")
-
+          input(type="text" name="name" value!="<?php echo isset($_POST['name']) ? h($_POST['name']) : ''; ?>" autocomplete="OFF")
           .
             <?php echo isset($error_message['name']) ? p($error_message['name']) : ''; ?>
 
 
       .m-form-row
-        p.m-form-title.required お問い合わせ内容
+        p.m-form-title.m-form-required お問い合わせ内容
         .m-form-input
-          textarea(name="body")
+          textarea(name="body") <?php echo isset($_POST['body']) ? h($_POST['body']) : ''; ?>
           .
             <?php echo isset($error_message['body']) ? p($error_message['body']) : ''; ?>
 
 
-      input.submit-btn(type="submit" value="送信する")
+      input.m-button--submit(type="submit" value="送信する")

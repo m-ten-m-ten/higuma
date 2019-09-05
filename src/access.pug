@@ -1,0 +1,34 @@
+//- access.pug
+
+extends /_includes/_layout.pug
+
+block var
+  - var pageName = "アクセス";
+  - var description = "";
+  - var pageImg = "media/higuma-access.jpg";
+
+block mainSection
+
+  .m-accessMap
+    iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.487865328915!2d139.5004388510951!3d35.66498753837232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018e5397e6d5973%3A0x71214257e649f7bc!2z44Gy44GQ44G-5pW06aqo6Zmi!5e0!3m2!1sja!2sus!4v1559096978850!5m2!1sja!2sus" frameborder="0" width="100%" style="border:0" allowfullscreen="")
+
+  .m-accessText
+    a.m-button(href="https://goo.gl/maps/VLBcYVxTLtVSEQvN7" target="_blank")
+      i.fas.fa-map-marker-alt
+      | Google Mapを開く
+
+    p 〒183-0013 東京都府中市小柳町1丁目21-1
+
+    p
+      i.fa.fa-train
+      | 京王線多磨霊園駅から徒歩３分
+
+    p
+      i.fa.fa-train
+      | 西武多摩川線(是政線)白糸台駅から徒歩１２分
+
+    p
+      i.fa.fa-car
+      | 店舗横の駐車スペース　車２台分
+
+    img(src="media/higuma-gaikan.jpg" alt="")

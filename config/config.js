@@ -7,6 +7,6 @@ module.exports = {
   },
   pug: {
   	basedir: 'src',
-  	pretty: true
+  	pretty: false
   }
 }

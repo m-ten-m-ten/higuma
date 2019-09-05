@@ -7,6 +7,22 @@
 .l-section--page
   @extend.l-section
 
+  .m-accessMap
+    float: right
+    width: calc(100% - 375px)
+    +mediaquery-tablet
+      float: none
+      width: 100%
+
+    iframe
+      height: 580px
+      +mediaquery-tablet
+        height: 380px
+      +mediaquery-smartphone
+        height: 280px
+
+  .m-accessText
+    margin-top: 15px
 
 .l-section--timeTable
   @extend.l-section

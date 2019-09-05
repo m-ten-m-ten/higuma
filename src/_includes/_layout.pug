@@ -2,6 +2,8 @@
 block var
 if pageName == "お問い合わせ"
   include /_includes/_formHead.pug
+else if pageName == "送信結果"
+  include /_includes/_sentHead.pug
 
 doctype html
 html
@@ -30,13 +32,16 @@ html
     else
       .l-section--page
         .l-container
-          .m-bread-crumb
+          .m-breadCrumb
             ul
               li: a(title="" href="index.html" class="home") ホーム
               li #{pageName}
-          h2 #{pageName}
 
-          block mainSection
+          .m-sectionTitle
+            h1 #{pageName}
+
+          .m-sectionContent
+            block mainSection
 
     //- footer
     include /_includes/_l-footer.pug

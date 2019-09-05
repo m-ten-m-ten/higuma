@@ -15,6 +15,8 @@ let sassPtn = path.join(srcDir, '/style/**/!(_)*.sass')
 let pugPtn = path.join(srcDir, '/**/!(_)*.pug')
 let jsDir = '/script'
 let mediaDir = '/media'
+let phpPtn = path.join(distDir, '/?(form|sent).html')
+
 
 /* ターミナルから受け取ったコマンドを実行 */
 switch (cmd) {
@@ -30,7 +32,11 @@ switch (cmd) {
   case 'copy':
     fileCopy(copyDir)
     break
+  case 'php':
+    renamePhp()
+    break
 }
+
 
 /* ビルド関数 */
 function buildSass () {
@@ -64,6 +70,18 @@ function buildPug () {
   .catch(err => console.error(err))
 }
 
+function renamePhp () {
+  fileList(phpPtn)
+  .then(files => {
+    Promise.all(files.map(file => {
+      fs.rename(file, changeExt('php', file), (err) => {
+        if (err) console.error(err)
+      })
+    }))
+  })
+  .then(() => console.log('.html to .php rename finished!'))
+}
+
 
 function startServer () {
   bs.init({
@@ -92,6 +110,12 @@ function startServer () {
     if (err) console.error(err)
     watcher.on('all', (ev, file) => {
       fileCopy(mediaDir)
+    })
+  })
+  gaze(path.join(distDir, '/*.html'), (err, watcher) => {
+    if (err) console.error(err)
+    watcher.on('added', (ev, file) => {
+      renamePhp()
     })
   })
 }
@@ -138,4 +162,9 @@ function outputFile (file, data) {
 function distPath (ext, file) {
   let parse = path.parse(file)
   return path.join(parse.dir.replace(srcDir, distDir), `${parse.name}.${ext}`)
+}
+
+function changeExt (ext, file) {
+  let parse = path.parse(file)
+  return path.join(parse.dir, `${parse.name}.${ext}`)
 }

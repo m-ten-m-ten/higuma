@@ -26,11 +26,14 @@ p
 ul
   list-style: none inside
 
-h1, h2, h3, h4, h5, h6
-  letter-spacing: $letterSpacing-title
-
 small
   line-height: 1.0
+
+// clearFix
+.cf
+  content: ""
+  display: block
+  clear: both
 
 // margin
 .mr0
@@ -42,6 +45,7 @@ small
 .ml5
   margin-left: 5px
 
+// mediaquery
 .forSP
   display: none
   +mediaquery-smartphone
