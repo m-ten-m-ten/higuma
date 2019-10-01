@@ -7,16 +7,14 @@ const sass   = require('./lib/sass')
 const config = require('./config/config')
 const pug    = require('./lib/pug')
 const cmd    = process.argv[2]
-const copyDir = process.argv[3]
 
 let srcDir = 'src'
 let distDir = 'public'
 let sassPtn = path.join(srcDir, '/style/**/!(_)*.sass')
 let pugPtn = path.join(srcDir, '/**/!(_)*.pug')
-let jsDir = '/script'
-let mediaDir = '/media'
 let phpPtn = path.join(distDir, '/?(form|sent).html')
-
+// srcフォルダからそのままのフォルダ構成でコピーするファイル・フォルダのリスト
+let copyList = ['media', 'script', 'favicon.ico']
 
 /* ターミナルから受け取ったコマンドを実行 */
 switch (cmd) {
@@ -26,19 +24,20 @@ switch (cmd) {
   case 'pug':
     buildPug()
     break
-  case 'server':
-    startServer(config.server)
-    break
   case 'copy':
-    fileCopy(copyDir)
+    copyFiles()
     break
   case 'php':
     renamePhp()
+    break
+  case 'server':
+    startServer(config.server)
     break
 }
 
 
 /* ビルド関数 */
+
 function buildSass () {
   fileList(sassPtn)
   .then(files => {
@@ -70,6 +69,16 @@ function buildPug () {
   .catch(err => console.error(err))
 }
 
+// srcフォルダからそのままのフォルダ構成でコピーするファイル・フォルダのリストのコピー実施
+function copyFiles () {
+  copyList.forEach(list => {
+    fs.copy(path.join(srcDir, list), path.join(distDir, list), err => {
+      if (err) return console.error(err)
+    })
+  })
+}
+
+// .html → .php
 function renamePhp () {
   fileList(phpPtn)
   .then(files => {
@@ -86,7 +95,7 @@ function renamePhp () {
 function startServer () {
   bs.init({
     server: distDir,
-    files: path.join(distDir, '/**/+(*.html|*.js|*.css|*.jpg|*.png)')
+    files: path.join(distDir, '/**/+(*.html|*.js|*.css|*.jpg|*.png|*.ico)')
   })
   gaze(path.join(srcDir, '/**/*.sass'), (err, watcher) => {
     if (err) console.error(err)
@@ -100,16 +109,10 @@ function startServer () {
       buildPug(config.pug, file)
     })
   })
-  gaze(path.join(srcDir, '/script/*.js'), (err, watcher) => {
+  gaze(path.join(srcDir, '/**/*.*'), (err, watcher) => {
     if (err) console.error(err)
     watcher.on('all', (ev, file) => {
-      fileCopy(jsDir)
-    })
-  })
-  gaze(path.join(srcDir, '/media/*'), (err, watcher) => {
-    if (err) console.error(err)
-    watcher.on('all', (ev, file) => {
-      fileCopy(mediaDir)
+      copyFiles()
     })
   })
   gaze(path.join(distDir, '/*.html'), (err, watcher) => {
@@ -121,14 +124,6 @@ function startServer () {
 }
 
 /* ユーティリティ */
-
-// srcからpublicにそのままコピーするもの
-function fileCopy (dir) {
-  fs.copy(path.join(srcDir, dir), path.join(distDir, dir), err => {
-    if (err) return console.error(err)
-    console.log(dir + ' file copy finished')
-  })
-}
 
 function readFile (path) {
   return new Promise((resolve, reject) => {

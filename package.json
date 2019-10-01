@@ -7,11 +7,10 @@
     "lib": "lib"
   },
   "scripts": {
-    "start": "npm run sass && npm run pug && npm run js && npm run media && npm run php && npm run serve",
+    "start": "npm run sass && npm run pug && npm run copy && npm run php && npm run serve",
     "sass": "node index.js sass",
     "pug": "node index.js pug",
-    "js": "node index.js copy script",
-    "media": "node index.js copy media",
+    "copy": "node index.js copy",
     "php": "node index.js php",
     "serve": "node index.js server",
     "test": "echo \"Error: no test specified\" && exit 1"
