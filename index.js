@@ -76,6 +76,7 @@ function copyFiles () {
       if (err) return console.error(err)
     })
   })
+console.log('Copy files finish!')
 }
 
 // .html → .php
