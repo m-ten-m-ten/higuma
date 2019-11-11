@@ -17,6 +17,8 @@ let phpPtn = path.join(distDir, '/?(form|sent).html')
 let copyList = ['media', 'script', 'favicon.ico']
 
 /* ターミナルから受け取ったコマンドを実行 */
+// ----------------
+
 switch (cmd) {
   case 'sass':
     buildSass()
@@ -37,6 +39,7 @@ switch (cmd) {
 
 
 /* ビルド関数 */
+// ----------------
 
 function buildSass () {
   fileList(sassPtn)
@@ -125,6 +128,7 @@ function startServer () {
 }
 
 /* ユーティリティ */
+// ----------------
 
 function readFile (path) {
   return new Promise((resolve, reject) => {

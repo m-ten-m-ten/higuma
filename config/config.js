@@ -7,6 +7,7 @@ module.exports = {
   },
   pug: {
   	basedir: 'src',
+    // php混在につき、pretty: false
   	pretty: false
   }
 }
