@@ -6,8 +6,8 @@ module.exports = {
     sourceMap: 'style.css.map'
   },
   pug: {
-  	basedir: 'src',
+    basedir: 'src',
     // php混在につき、pretty: false
-  	pretty: false
+    pretty: false
   }
 }
