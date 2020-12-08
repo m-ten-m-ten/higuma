@@ -1,13 +1,5 @@
-module.exports = {
-  sass: {
-    includePaths: ['src/style'],
-    indentedSyntax: true,
-    outFile: 'style.css',
-    sourceMap: 'style.css.map'
-  },
-  pug: {
-    basedir: 'src',
-    // php混在につき、pretty: false
-    pretty: false
-  }
-}
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.distDir = exports.srcDir = void 0;
+exports.srcDir = 'src';
+exports.distDir = 'public';
