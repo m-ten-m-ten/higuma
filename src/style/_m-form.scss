@@ -1,0 +1,113 @@
+.m-form {
+  width: 100%;
+  padding: 20px 0;
+  background-color: $main-color-more-lighter;
+  color: #000;
+  text-align: center;
+}
+
+.m-form-row {
+  @include clear-fix;
+  @include mediaquery(580px) {
+    // border-bottom: 1px solid #ccc
+  }
+}
+
+.m-form-title {
+  width: 250px;
+  margin: 10px 0;
+  padding: 5px 10px;
+  float: left;
+  line-height: 38px;
+  text-align: left;
+
+  @include mediaquery(580px) {
+    width: 100%;
+    margin-top: 15px;
+    float: none;
+    line-height: 32px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+}
+
+.m-form-title--email {
+  @extend.m-form-title;
+
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.m-form-required:after {
+  content: '必須';
+  display: inline-block;
+  padding: 0 10px;
+  float: right;
+  background-color: $main-color-darker;
+  color: $font-color-inverse;
+}
+
+.m-form-input {
+  width: calc(100% - 265px);
+  margin: 10px 0;
+  padding: 5px 10px;
+  float: left;
+  line-height: 1;
+  text-align: left;
+
+  @include mediaquery(580px) {
+    width: 100%;
+    margin-top: -10px;
+    float: none;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    border: 1px solid $main-color-lighter;
+  }
+
+  input {
+    height: 38px;
+  }
+
+  input.email-input {
+    font-size: 1.8rem;
+  }
+
+  textarea {
+    height: 150px;
+    padding: 10px 0;
+    line-height: 1.7;
+  }
+
+  p {
+    margin: 5px 0 0 0;
+  }
+
+  p.email-caution {
+    color: $main-color-darker;
+    font-size: 1.8rem;
+    font-weight: bold;
+
+    @include mediaquery(580px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  p.error {
+    margin-top: 10px;
+    color: $font-color-error;
+    font-weight: bold;
+
+    @include mediaquery(580px) {
+      margin-top: 5px;
+    }
+  }
+}
+
+.m-form-input--email {
+  @extend.m-form-input;
+}

@@ -1,0 +1,79 @@
+.m-section-content {
+  h2 {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    padding-left: 5px;
+    border-bottom: 1px solid $main-color;
+    border-left: 5px solid $main-color;
+    font-size: 2.2rem;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  h3 {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    border-left: 5px solid $main-color-lighter;
+    font-weight: bold;
+  }
+
+  img {
+    display: block;
+    max-width: 60%;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    float: right;
+
+    @include mediaquery-smartphone {
+      max-width: 100%;
+      margin-bottom: 0;
+      margin-left: 0;
+      float: none;
+    }
+  }
+
+  .m-accessText {
+    img {
+      max-width: 100%;
+      margin-bottom: 0;
+      margin-left: 0;
+      float: none;
+    }
+  }
+
+  li {
+    margin-bottom: 5px;
+    margin-left: 10px;
+    list-style-type: disc;
+  }
+
+  table {
+    margin-bottom: 15px;
+    border-collapse: collapse;
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid #aaa;
+  }
+
+  th,
+  td {
+    padding: 10px 20px;
+  }
+
+  th {
+    background-color: $main-color;
+    color: $font-color-inverse;
+  }
+
+  tbody {
+    tr:nth-child(even) {
+      background-color: $main-color-more-lighter;
+    }
+  }
+}

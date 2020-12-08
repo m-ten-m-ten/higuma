@@ -1,0 +1,21 @@
+.m-main-visual {
+  img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+  }
+}
+
+.m-main-visual-forSp {
+  display: none;
+
+  @include mediaquery-smartphone {
+    display: block;
+  }
+}
+
+@include mediaquery-smartphone {
+  .m-main-visual-overSp {
+    display: none;
+  }
+}

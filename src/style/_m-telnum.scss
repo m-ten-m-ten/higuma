@@ -1,0 +1,12 @@
+.m-telnum {
+  display: block;
+
+  img {
+    width: 216px;
+    height: auto;
+
+    @include mediaquery-tablet {
+      width: 180px;
+    }
+  }
+}

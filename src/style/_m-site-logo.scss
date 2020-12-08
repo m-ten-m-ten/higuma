@@ -1,0 +1,31 @@
+.m-site-logo {
+  margin: 0;
+
+  a {
+    display: block;
+    line-height: 1;
+
+    img {
+      width: 100%;
+      max-width: 430px;
+      height: auto;
+    }
+  }
+}
+
+.m-site-logo--small {
+  @extend .m-site-logo;
+
+  a {
+    width: 90px;
+    height: 89px;
+    background: url('../media/siteLogo-small@2x.png') no-repeat {
+      size: 90px 89px;
+    }
+
+    @include mediaquery-580 {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}

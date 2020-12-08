@@ -1,0 +1,31 @@
+.m-footer-nav {
+  ul {
+    @include inline-block-parent;
+  }
+
+  li {
+    @include inline-block;
+
+    margin-right: 30px;
+
+    @include mediaquery-smartphone {
+      margin-right: 25px;
+    }
+  }
+
+  a {
+    color: $font-color-inverse;
+    font-size: 1.4rem;
+
+    &:before {
+      content: '';
+      margin-right: 5px;
+      font-family: 'Font Awesome 5 Free', sans-serif;
+      font-weight: 900;
+    }
+  }
+
+  i {
+    display: none;
+  }
+}

@@ -1,0 +1,81 @@
+.m-time-table {
+  border-top: 1px solid $main-color;
+  text-align: center;
+}
+
+.m-time-table-title {
+  display: inline-block;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  border-top: 5px solid $main-color;
+  color: $main-color;
+}
+
+.m-time-table-content {
+  p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  table {
+    margin-right: auto;
+    margin-left: auto;
+    border-collapse: collapse;
+    border: 1px solid #aaa;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  tr:nth-of-type(even) {
+    background-color: $main-color-more-lighter;
+  }
+
+  th,
+  td {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+
+    @include mediaquery-smartphone {
+      padding: 10px 10px;
+      font-weight: normal;
+    }
+  }
+
+  small {
+    @include mediaquery-smartphone {
+      font-weight: bold;
+    }
+  }
+
+  th {
+    background-color: $main-color;
+    color: $font-color-inverse;
+  }
+
+  .open,
+  .rest,
+  .telnum a,
+  h3 {
+    color: $main-color;
+  }
+
+  .rest,
+  h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  .telnum a {
+    font-size: 2.4rem;
+    letter-spacing: 3px;
+  }
+
+  .m-rinjiRest ul {
+    display: inline-block;
+    margin-right: auto;
+    margin-left: auto;
+    list-style-type: disc;
+    text-align: left;
+  }
+}

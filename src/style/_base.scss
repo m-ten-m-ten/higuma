@@ -1,0 +1,79 @@
+// ベースとなるスタイル
+// ----------------------------------------------------------------------
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: $font-color-inverse;
+  color: $font-color;
+  font-family: $font-family;
+  font-size: 1.6rem;
+  line-height: 1.7;
+}
+
+a {
+  @include animation;
+
+  color: $font-color;
+  text-decoration: none;
+}
+
+p {
+  margin: 15px 0;
+}
+
+ul {
+  list-style: none inside;
+}
+
+small {
+  line-height: 1;
+}
+
+// clearFix
+.cf {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+// margin
+.mr0 {
+  margin-right: 0;
+}
+
+.mr5 {
+  margin-right: 5px;
+}
+
+.ml5 {
+  margin-left: 5px;
+}
+
+// mediaquery
+.forSP {
+  display: none;
+
+  @include mediaquery-smartphone {
+    display: block;
+  }
+}
+
+.overSP {
+  @include mediaquery-smartphone {
+    display: none;
+  }
+}
+
+// font awesome
+.fa,
+.fas {
+  margin-right: 5px;
+}

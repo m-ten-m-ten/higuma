@@ -1,0 +1,19 @@
+// .m-copy-right
+
+.m-copy-right--header {
+  color: $main-color;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.m-copy-right--footer {
+  margin: 25px;
+  color: $font-color-inverse;
+  font-size: 1.4rem;
+  font-weight: normal;
+  text-align: center;
+
+  @include mediaquery-smartphone {
+    font-size: 1.2rem;
+  }
+}

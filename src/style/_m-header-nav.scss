@@ -1,0 +1,95 @@
+.m-header-nav {
+  position: fixed;
+  top: 58px;
+  width: 100%;
+  margin-left: -10px;
+  transition: {
+    duration: 600ms;
+    timing-function: $easeInOutCubic;
+  }
+
+  ul {
+    display: none;
+  }
+
+  li {
+    display: block;
+    margin: 0;
+    border-bottom: 1px solid #eee;
+    background-color: $main-color;
+  }
+
+  a {
+    display: block;
+    position: relative;
+    padding: 10px 15px 10px 40px;
+    color: $font-color-inverse;
+    font-size: 1.6rem;
+  }
+
+  i {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
+}
+
+.m-header-nav-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 45px;
+  height: 45px;
+  border-radius: 23px;
+  background-color: $main-color;
+  cursor: pointer;
+
+  .m-header-nav-toggle-bar,
+  &::before,
+  &::after {
+    @include animation;
+
+    display: block;
+    position: absolute;
+    top: 21px;
+    left: 11px;
+    width: 23px;
+    height: 3px;
+    background-color: $font-color-inverse;
+  }
+
+  &::before {
+    content: '';
+    transform: translate(0, 9px);
+  }
+
+  &::after {
+    content: '';
+    transform: translate(0, -9px);
+  }
+
+  &.is-active .m-header-nav-toggle-bar {
+    opacity: 0;
+  }
+
+  &.is-active::before {
+    transform: rotate(-45deg);
+  }
+
+  &.is-active::after {
+    transform: rotate(45deg);
+  }
+}
+
+.m-header-nav-close {
+  display: none;
+
+  &.is-active {
+    display: block;
+    padding: 10px;
+    background-color: $main-color-darker;
+    color: $font-color-inverse;
+    text-align: center;
+    cursor: pointer;
+  }
+}

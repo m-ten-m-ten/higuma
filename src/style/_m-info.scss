@@ -1,0 +1,42 @@
+.m-info {
+  padding: 10px;
+  border: 3px solid $main-color;
+}
+
+.m-info-title {
+  border-bottom: 3px solid $main-color;
+  font-size: 2.8rem;
+
+  i {
+    color: $main-color;
+  }
+}
+
+.m-info-content {
+  > ul > li {
+    padding-top: 10px;
+    border-bottom: 1px solid #ccc;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.m-info-kiji {
+  h3 {
+    margin-top: 10px;
+    color: $main-color;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  ul {
+    margin-left: 5px;
+    list-style-type: disc;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}

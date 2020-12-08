@@ -1,0 +1,114 @@
+.m-button {
+  @include animation;
+
+  display: inline-block;
+  padding: 10px 20px;
+  border: 3px solid $main-color;
+  border-radius: 5px;
+  background-color: $main-color;
+  color: $font-color-inverse;
+  text-align: center;
+
+  &:hover {
+    background-color: $font-color-inverse;
+    color: $main-color;
+  }
+}
+
+.m-button--info {
+  @extend.m-button;
+
+  display: block;
+  border-color: $main-color-lighter;
+  background-color: $font-color-inverse;
+  color: $main-color;
+  text-align: left;
+
+  &:hover {
+    background-color: $main-color-lighter;
+  }
+}
+
+.m-button--access {
+  @extend.m-button;
+
+  padding: 0 10px;
+}
+
+.m-button--submit {
+  @extend.m-button;
+
+  margin-top: 15px;
+  padding: 10px 40px;
+  border-radius: 0;
+  border-color: $main-color-darker;
+  background-color: $main-color-darker;
+  font-size: 1.8rem;
+
+  &:hover {
+    color: $main-color-darker;
+  }
+}
+
+.m-button--more {
+  @extend.m-button;
+
+  background: url('../media/button-arrow@2x.png') no-repeat {
+    size: 8px 12px;
+    position: 140px 50%;
+  }
+
+  &:hover {
+    background-color: $font-color;
+    background-image: url('../media/button-arrow-hover@2x.png');
+    color: $font-color-inverse;
+  }
+}
+
+.m-button--facebook {
+  @extend.m-button;
+  border-color: $facebook;
+
+  color: $facebook;
+
+  &:hover {
+    background-color: $facebook;
+    color: $font-color-inverse;
+  }
+}
+
+.m-button--twitter {
+  @extend.m-button;
+  border-color: $twitter;
+
+  color: $twitter;
+
+  &:hover {
+    background-color: $twitter;
+    color: $font-color-inverse;
+  }
+}
+
+.m-button--hatena {
+  @extend.m-button;
+  border-color: $hatena;
+
+  color: $hatena;
+
+  &:hover {
+    background-color: $hatena;
+    color: $font-color-inverse;
+  }
+}
+
+.m-button--line {
+  @extend.m-button;
+  border-color: $line;
+
+  color: $line;
+
+  &:hover {
+    background-color: $line;
+    color: $font-color-inverse;
+  }
+}

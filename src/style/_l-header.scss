@@ -1,0 +1,58 @@
+.l-header {
+  @include clear-fix;
+
+  margin-top: 10px;
+  margin-bottom: 5px;
+
+  .m-copy-right--header {
+    display: none;
+
+    @include mediaquery-smartphone {
+      display: block;
+    }
+  }
+
+  .m-site-logo {
+    padding-top: 10px;
+    float: left;
+
+    @include mediaquery(645px) {
+      padding-top: 0;
+    }
+  }
+
+  .m-header-info {
+    @include clear-fix;
+
+    float: right;
+
+    @include mediaquery(645px) {
+      float: none;
+    }
+
+    @include mediaquery-smartphone {
+      display: none;
+    }
+  }
+
+  .m-telnum {
+    display: block;
+
+    @include mediaquery(645px) {
+      float: left;
+    }
+  }
+
+  .m-button--access {
+    float: right;
+  }
+
+  .m-header-nav {
+    display: none;
+
+    @include mediaquery-smartphone {
+      display: block;
+      z-index: 10;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.m-pagenation {
+  @include inline-block-parent;
+
+  margin-top: 90px;
+  list-style-type: none;
+  text-align: center;
+
+  li {
+    @include inline-block;
+
+    margin-right: 10px;
+
+    a {
+      @include animation;
+
+      display: block;
+      padding: 10px 15px;
+      border: 1px solid $font-color;
+
+      &:hover {
+        background-color: $font-color;
+        color: $font-color-inverse;
+      }
+    }
+  }
+}

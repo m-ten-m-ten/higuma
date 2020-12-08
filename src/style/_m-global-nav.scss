@@ -1,0 +1,79 @@
+.m-global-nav {
+  ul {
+    @include inline-block-parent;
+
+    margin-bottom: 10px;
+    box-shadow: 0 0 8px rgba(6, 0, 1, 0.26);
+  }
+
+  li {
+    @include inline-block;
+
+    width: (100% / 6);
+    border-left: 1px solid #ccc;
+    background-image: linear-gradient(
+      to top,
+      rgba(132, 132, 132, 0.11),
+      rgba(202, 202, 202, 0.11)
+    );
+
+    &:first-child {
+      border-left: none;
+
+      @include mediaquery(610px) {
+        width: (100% / 2);
+        border-bottom: 1px solid #ccc;
+      }
+    }
+  }
+
+  a {
+    display: block;
+    height: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+
+    @include mediaquery-tablet {
+      font-size: 1.6rem;
+
+      @include mediaquery(610px) {
+        height: auto;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-weight: normal;
+      }
+    }
+
+    &.active {
+      background-color: $main-color;
+      color: $font-color-inverse;
+    }
+  }
+
+  i {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 10px;
+    color: $main-color;
+    font-size: 3rem;
+    font-weight: bold;
+
+    @include mediaquery(610px) {
+      display: inline-block;
+      margin-right: 5px;
+      font-size: 2rem;
+    }
+  }
+
+  .access,
+  .phone {
+    display: none;
+
+    @include mediaquery-smartphone {
+      display: inline-block;
+    }
+  }
+}

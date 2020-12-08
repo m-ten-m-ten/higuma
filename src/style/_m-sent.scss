@@ -1,0 +1,25 @@
+.m-sent {
+  @extend.m-form;
+}
+
+.m-sent-row {
+  @extend.m-form-row;
+}
+
+.m-sent-title {
+  @extend.m-form-title;
+
+  width: 160px;
+  color: $main-color-darker;
+  line-height: 1.7rem;
+}
+
+.m-sent-input {
+  @extend.m-form-input;
+
+  font-weight: bold;
+
+  @include mediaquery(580px) {
+    margin-top: -15px;
+  }
+}

@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+// font-family
+// ----------------------------------------------------------------------
+$font-family: '游ゴシック', YuGothic, 'ヒラギノ角ゴ Pro',
+  'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo', sans-serif;
+$font-family-specific: 'Lato', sans-serif;
+
+// カラー
+// ----------------------------------------------------------------------
+$font-color: #333;
+$font-color-inverse: #fff;
+$font-color-sub: #656c6e;
+$font-color-error: #e27408;
+
+$main-color: #3883b2;
+$main-color-darker: rgb(3, 84, 125);
+$main-color-lighter: #b4daed;
+$main-color-more-lighter: rgb(239, 245, 248);
+
+$facebook: rgb(72, 113, 169);
+$twitter: rgb(112, 189, 211);
+$hatena: rgb(47, 155, 205);
+$line: rgb(142, 192, 157);
+
+$bg-color-base: rgb(246, 246, 246);
+$bg-color-white: #fff;
+$bg-color-footer-nav: rgb(147, 152, 153);
+$bg-color-footer: rgb(101, 108, 110);
+
+$letter-spacing-title: 0.1em;
+
+// ブレークポイント
+// ----------------------------------------------------------------------
+$breakpoint-pc: 1130px;
+$breakpoint-tablet: 768px;
+$breakpoint-smartphone: 480px;
+$breakpoint-se: 360px;
+$breakpoint-main-visual-switch: 600px;
+
+// インポート
+// ----------------------------------------------------------------------
+@import 'normalize';
+@import 'mixin';
+@import 'base';
+@import 'l-header';
+@import 'm-site-logo';
+@import 'm-header-nav';
+@import 'm-telnum';
+@import 'm-main-visual';
+@import 'l-global-nav';
+@import 'm-global-nav';
+@import 'l-section';
+@import 'grid';
+@import 'm-time-table';
+@import 'm-info';
+@import 'm-concept';
+@import 'm-section-title';
+@import 'm-section-content';
+@import 'm-button';
+@import 'm-product-list';
+@import 'm-news-list';
+@import 'm-bread-crumb';
+@import 'm-form';
+@import 'm-sent';
+@import 'l-share';
+@import 'm-back-top';
+@import 'm-share-buttons';
+@import 'l-footer';
+@import 'm-footer-nav';
+@import 'm-copy-right';
+@import 'm-pagenation';

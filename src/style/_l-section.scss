@@ -1,0 +1,61 @@
+.l-section {
+  width: 100%;
+  margin-bottom: 30px;
+  background-color: $bg-color-white;
+}
+
+.l-section--page {
+  @extend.l-section;
+
+  .m-accessMap {
+    width: calc(100% - 375px);
+    float: right;
+
+    @include mediaquery-tablet {
+      width: 100%;
+      float: none;
+    }
+
+    iframe {
+      height: 580px;
+
+      @include mediaquery-tablet {
+        height: 380px;
+      }
+
+      @include mediaquery-smartphone {
+        height: 280px;
+      }
+    }
+  }
+
+  .m-accessText {
+    margin-top: 15px;
+  }
+}
+
+.l-section--timeTable {
+  @extend.l-section;
+  width: 440px;
+  margin-right: auto;
+  margin-left: auto;
+
+  float: right;
+
+  @include mediaquery-tablet {
+    width: 100%;
+    float: none;
+  }
+}
+
+.l-section--info {
+  @extend.l-section;
+  width: calc(100% - 440px - 15px);
+
+  float: left;
+
+  @include mediaquery-tablet {
+    width: 100%;
+    float: none;
+  }
+}

@@ -1,0 +1,33 @@
+.m-bread-crumb {
+  margin-bottom: 10px;
+
+  ul {
+    @include inline-block-parent;
+  }
+
+  li {
+    @include inline-block;
+
+    font-size: 1.3rem;
+
+    &:before {
+      content: '>';
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+
+    &:first-child:before {
+      content: '';
+      margin: 0;
+    }
+  }
+
+  a {
+    color: $main-color;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

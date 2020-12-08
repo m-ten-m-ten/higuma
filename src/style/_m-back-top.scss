@@ -1,0 +1,15 @@
+.m-back-top {
+  @include text-replace;
+  @include animation;
+
+  width: 50px;
+  height: 50px;
+  background: url('../media/backTop@2x.png') {
+    size: 50px 50px;
+  }
+  cursor: pointer;
+
+  &:hover {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}

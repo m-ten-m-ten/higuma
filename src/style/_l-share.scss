@@ -1,0 +1,12 @@
+.l-share {
+  position: relative;
+  padding: 35px 0;
+  background-color: $bg-color-white;
+}
+
+.m-back-top {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+}
