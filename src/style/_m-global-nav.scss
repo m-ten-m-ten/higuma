@@ -19,11 +19,11 @@
 
     &:first-child {
       border-left: none;
+    }
 
-      @include mediaquery(610px) {
-        width: (100% / 2);
-        border-bottom: 1px solid #ccc;
-      }
+    @include mediaquery(610px) {
+      width: (100% / 2);
+      border-bottom: 1px solid #ccc;
     }
   }
 
