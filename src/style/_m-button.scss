@@ -33,6 +33,11 @@
   @extend.m-button;
 
   padding: 0 10px;
+  // font awesome
+  .fa,
+  .fas {
+    margin-right: 5px;
+  }
 }
 
 .m-button--submit {

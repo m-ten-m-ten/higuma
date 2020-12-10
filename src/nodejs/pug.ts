@@ -1,7 +1,7 @@
 import * as pug from 'pug'
 import * as path from 'path'
 import { getFileList, getDistPath, outputFile } from './util'
-import { srcDir } from '../config/config'
+import { srcDir } from './config/config'
 
 const pugPtn = path.join(srcDir, '/**/!(_)*.pug')
 const pugOptions = { basedir: 'src' }

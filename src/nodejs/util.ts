@@ -1,7 +1,7 @@
 import * as path from 'path'
 import * as glob from 'glob'
 import * as fs from 'fs-extra'
-import { srcDir, distDir } from '../config/config'
+import { srcDir, distDir } from './config/config'
 
 export function outputFile(distPath: string, data: string): void {
   fs.outputFile(distPath, data, (err) => {

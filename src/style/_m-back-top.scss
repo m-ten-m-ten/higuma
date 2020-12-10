@@ -1,15 +1,27 @@
 .m-back-top {
-  @include text-replace;
   @include animation;
 
+  display: flex;
+  position: fixed;
+  right: 2rem;
+  bottom: calc(-50px - 2rem);
+  align-items: center;
+  justify-content: center;
   width: 50px;
   height: 50px;
-  background: url('../media/backTop@2x.png') {
-    size: 50px 50px;
-  }
+  margin-right: 0;
+  border-radius: 9999px;
+  opacity: 0.6;
+  background-color: $main-color;
+  color: $font-color-inverse;
+  font-size: 2.4rem;
   cursor: pointer;
 
   &:hover {
-    transform: translateX(-50%) translateY(-5px);
+    bottom: 3rem;
+  }
+
+  &.back-top__visible {
+    bottom: 2rem;
   }
 }

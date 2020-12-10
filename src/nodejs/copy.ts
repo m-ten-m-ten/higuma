@@ -1,6 +1,6 @@
 import * as path from 'path'
 import * as fs from 'fs-extra'
-import { srcDir, distDir } from '../config/config'
+import { srcDir, distDir } from './config/config'
 
 // srcフォルダからそのままのフォルダ構成でコピーするファイル・フォルダのリスト
 const copyList = ['media', 'script', 'favicon.ico']

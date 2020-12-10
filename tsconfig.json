@@ -1,13 +1,12 @@
 {
- "compilerOptions": {
-   "module": "commonjs",
-   "target": "es2020",
-   "sourceMap": false,
-   "types": [
-     "node"
-   ]
- },
- "exclude": [
-   "node_modules"
- ]
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "es5", // TSはECMAScript 5に変換
+    "module": "es2015", // TSのモジュールはES Modulesとして出力
+    "moduleResolution": "node", // node_modules からライブラリを読み込む(jQuery等)
+  },
+  "include": [
+      "src/scripts/**/*.ts"
+    ],
+  "exclude": ["node_modules", "src/nodejs"]
 }

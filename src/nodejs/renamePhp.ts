@@ -1,6 +1,6 @@
 import * as path from 'path'
 import * as fs from 'fs-extra'
-import { distDir } from '../config/config'
+import { distDir } from './config/config'
 import { getFileList, changeExt } from './util'
 
 const phpPtn = path.join(distDir, '/+(form|sent).html')
