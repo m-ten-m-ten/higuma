@@ -17,11 +17,11 @@
   font-size: 2.4rem;
   cursor: pointer;
 
-  &:hover {
-    bottom: 3rem;
-  }
-
   &.back-top__visible {
     bottom: 2rem;
+  }
+
+  &:hover {
+    bottom: 3rem;
   }
 }

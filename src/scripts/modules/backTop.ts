@@ -1,7 +1,9 @@
 import jQuery from 'jquery'
 const $ = jQuery
 
-export function backTop() {
+const visibleScrollTop = 100
+
+export function backTop(): void {
   const backTop = $('.m-back-top')
 
   // backTopクラス要素をクリックすると、ページトップへスクロール。
@@ -11,13 +13,12 @@ export function backTop() {
 
   // backTopクラス要素の出現制御
   $(window).on('scroll', function () {
-    const triggerPoint = 100
-    let scrollTop = $(window).scrollTop()
+    const scrollTop = $(window).scrollTop()
 
-    if (scrollTop <= triggerPoint) {
-      backTop.removeClass('back-top__visible')
-    } else {
+    if (scrollTop > visibleScrollTop) {
       backTop.addClass('back-top__visible')
+    } else {
+      backTop.removeClass('back-top__visible')
     }
   })
 }
