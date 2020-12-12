@@ -11,12 +11,15 @@ export class Accordion {
     this.accordionBody = this.accordionWrapper.children(
       '.accordion-body:not(:animated)'
     )
-    this.accordionTrigger = this.accordionWrapper.children('.accordion-trigger')
+    this.accordionTrigger = this.accordionWrapper.find('.accordion-trigger')
     this.bindEvent()
+
+    console.log(this.accordionTrigger)
   }
 
   bindEvent() {
     this.accordionTrigger.on('click', $.proxy(this.slideMenu, this))
+
     $(window).on('resize', () => {
       this.accordionBody.removeAttr('style')
       this.accordionTrigger.removeClass('is-open')
@@ -24,6 +27,7 @@ export class Accordion {
   }
 
   slideMenu() {
+    console.log(this.accordionBody.css('display'))
     if (this.accordionBody.css('display') === 'none') {
       this.accordionBody.slideDown()
       this.accordionTrigger.addClass('is-open')

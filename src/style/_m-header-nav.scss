@@ -8,10 +8,6 @@
     timing-function: $easeInOutCubic;
   }
 
-  ul {
-    display: none;
-  }
-
   li {
     display: block;
     margin: 0;
@@ -32,6 +28,10 @@
     top: 15px;
     left: 15px;
   }
+}
+
+.accordion-body {
+  display: none;
 }
 
 .m-header-nav-toggle {
@@ -82,14 +82,10 @@
 }
 
 .m-header-nav-close {
-  display: none;
-
-  &.is-active {
-    display: block;
-    padding: 10px;
-    background-color: $main-color-darker;
-    color: $font-color-inverse;
-    text-align: center;
-    cursor: pointer;
-  }
+  display: block;
+  padding: 10px;
+  background-color: $main-color-darker;
+  color: $font-color-inverse;
+  text-align: center;
+  cursor: pointer;
 }

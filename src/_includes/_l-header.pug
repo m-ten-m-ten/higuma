@@ -7,11 +7,13 @@ header#header.l-header
       p &copy; HIGUMA osteopathic. All Rights Reserved
 
 
-    nav.m-header-nav
-      .m-header-nav-toggle
+    nav.m-header-nav.accordion-wrapper
+      .m-header-nav-toggle.accordion-trigger
         .m-header-nav-toggle-bar
-      include /_includes/_m-navigation.pug
-      .m-header-nav-close 閉じる
+      
+      .accordion-body
+        include /_includes/_m-navigation.pug
+        .m-header-nav-close.accordion-trigger 閉じる
 
 
     h1.m-site-logo
