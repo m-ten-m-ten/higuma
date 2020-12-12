@@ -5,11 +5,13 @@ import { backTop } from '../modules/backTop'
 
 export class App {
   ready() {
-    backTop()
+    window.onload = function () {
+      backTop()
 
-    // アコーディオンメニューの数だけインスタンス生成
-    $('.accordion-wrapper').each(function () {
-      new Accordion($(this))
-    })
+      // アコーディオンメニューの数だけインスタンス生成
+      $('.accordion-wrapper').each(function () {
+        new Accordion($(this))
+      })
+    }
   }
 }
