@@ -50,6 +50,10 @@
     &.active {
       background-color: $main-color;
       color: $font-color-inverse;
+
+      i {
+        color: $font-color-inverse;
+      }
     }
   }
 

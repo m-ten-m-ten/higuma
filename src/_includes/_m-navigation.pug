@@ -1,23 +1,23 @@
 ul
-  li: a(href="index.html")
+  li: a(class= page == 'index' ? 'active' : '' href="index.html")
     i.fas.fa-clinic-medical
     |ホーム
-  li: a(href="about.html")
+  li: a(class= page == 'about' ? 'active' : '' href="about.html")
     i.fas.fa-clipboard-check
     |当院について
-  li: a(href="judo.html")
+  li: a(class= page == 'judo' ? 'active' : '' href="judo.html")
     i.fas.fa-hands-helping
     |柔道整復
-  li: a(href="hoken.html")
+  li: a(class= page == 'hoken' ? 'active' : '' href="hoken.html")
     i.fas.fa-hand-holding-heart
     |各種保険
-  li: a(href="menu.html")
+  li: a(class= page == 'menu' ? 'active' : '' href="menu.html")
     i.fas.fa-table
     |料金表
-  li: a(href="form.php")
+  li: a(class= page == 'form' ? 'active' : '' href="form.php")
     i.fas.fa-envelope
     |お問い合わせ
-  li.access: a(href="access.html")
+  li.access: a(class= page == 'access' ? 'active' : '' href="access.html")
     i.fas.fa-map-marker-alt
     |アクセス
   li.phone: a(href="tel:0423361908")
