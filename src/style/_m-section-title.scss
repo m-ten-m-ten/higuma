@@ -8,7 +8,7 @@
     padding-bottom: 10px;
     border-bottom: 3px solid $main-color-lighter;
     font-size: 3.6rem;
-    font-weight: bold;
+    font-weight: normal;
 
     @include mediaquery-smartphone {
       margin-top: 10px;

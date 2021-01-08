@@ -3,12 +3,13 @@
   text-align: center;
 }
 
-.m-time-table-title {
+.m-time-table-title h3 {
   display: inline-block;
   padding-top: 10px;
   padding-bottom: 5px;
   border-top: 5px solid $main-color;
   color: $main-color;
+  font-weight: normal;
 }
 
 .m-time-table-content {
@@ -23,7 +24,6 @@
     border-collapse: collapse;
     border: 1px solid #aaa;
     font-size: 1.4rem;
-    font-weight: bold;
     text-align: center;
   }
 
@@ -63,7 +63,7 @@
   .rest,
   h3 {
     font-size: 1.8rem;
-    font-weight: bold;
+    font-weight: normal;
   }
 
   .telnum a {
