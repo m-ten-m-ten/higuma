@@ -1,11 +1,69 @@
 .
   <?php
-  session_start();
-  //入力内容を持たないアクセスやURLからのアクセスは入力画面へ遷移
-  if (!isset($_SESSION['input_data'])) {
-  header('Location:form.php');
-  exit();
+  require 'bootstrap.php';
+  
+  $request = new Request();
+
+  if(!$request->isPost()){
+    header('Location:form.php');
+    exit();
   }
-  $_POST = $_SESSION['input_data'];
-  unset($_SESSION['input_data']);
+
+  $_token = $request->getPost('_token');
+  $session = new Session();
+  $util = new Util();
+
+  if(!$util->checkCsrfToken('form', $_token, $session)){
+    header('Location:form.php');
+    exit();
+  }
+
+  $errors = [];
+
+  $name = $request->getPost('name');
+  $email = $request->getPost('email');
+  $body = $request->getPost('body');
+
+  if (!strlen($name)){
+    $errors['name'] = 'お名前を入力してください。';
+  } elseif (mb_strlen($name) > 21) {
+    $errors['name'] = 'お名前は20文字以内で入力してください。';
+  }
+
+  if (!strlen($email)) {
+    $errors['email'] = 'メールアドレスを入力してください。';
+  } elseif (!preg_match( '/^[0-9a-z_.\/?-]+@([0-9a-z-]+\.)+[0-9a-z-]+$/', $email)) {
+    $errors['email'] = 'メールアドレスは正しい形式で入力してください。';
+  }
+
+  if (!strlen($body)) {
+    $errors['body'] = 'お問い合わせ内容を入力してください。';
+  } elseif(mb_strlen($body) < 10) {
+    $errors['body'] = 'お問い合わせ内容は10文字以上入力してください。';
+  }
+
+  if (count($errors) > 0){
+    $session->set('name', $name);
+    $session->set('email', $email);
+    $session->set('body', $body);
+    $session->set('errors', $errors);
+
+    header('Location:form.php');
+    exit();
+  }
+  
+  $name = $util->escape($name);
+  $email = $util->escape($email);
+  $body = $util->escape($body);
+
+  $mailSubject = "【ひぐま整骨院WEBサイト】${name}様からのお問い合わせ";
+  $mailBody = "名前：${name} 様\nメールアドレス：${email}\nお問い合わせ内容：${body}\n";
+
+  $mail = new Mail();
+  if ($mail->sendMail($mailSubject, $mailBody)){
+    $resultMessage = "お問い合わせ内容の送信が完了いたしました。回答まで数日かかる場合がありますので、ご了承下さい。";
+  } else {
+    $resultMessage = "お問い合わせ内容の送信に失敗しました。再度ご入力頂きますか、お電話にてご連絡下さい。";
+  }
+
   ?>

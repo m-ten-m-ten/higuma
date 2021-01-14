@@ -9,27 +9,7 @@ block var
     var pageImg = "media/higuma-form.jpg";
 
 block mainSection
-
-  .
-    <?php
-
-    mb_language("japanese");
-    mb_internal_encoding("utf-8");
-
-    $to = "higuma41@gmail.com";
-    $title = "ひぐま整骨院WEBサイトからのお問い合わせ";
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $body = $_POST['body'];
-
-    $message = "お名前:{$name}\r\nメールアドレス:{$email}\r\nお問い合わせ内容:{$body}";
-
-    if(mb_send_mail($to, $title, $message)) {
-      echo "<p>下記内容にて送信が完了致しました。この度はお問い合わせ頂きまして、ありがとうございました。</p>";
-    } else {
-      echo "<p>送信できませんでした。再度ご送信頂くか、お電話にてご連絡ください。";
-    }
-    ?>
+  p <?php echo $resultMessage; ?>
 
   .m-sent
     .m-sent-row

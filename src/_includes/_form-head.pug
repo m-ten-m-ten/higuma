@@ -1,46 +1,22 @@
 .
   <?php
 
-  session_start();
+  include 'core/Session.php';
+  include 'core/Request.php';
+  include 'core/Util.php';
+  
+  $session = new Session();
+  $request = new Request();
+  $util = new Util();
+  $_token = $util->generateCsrfToken('form', $session);
 
-  if (!empty($_POST) && empty($_SESSION['input_data'])) {
+  $name = $session->get('name');
+  $email = $session->get('email');
+  $body = $session->get('body');
+  $errors = $session->get('errors');
 
-    if (empty($_POST['name'])) {
-      $error_message['name'] = 'お名前を入力してください。';
-    } elseif (mb_strlen($_POST['name']) > 20) {
-      $error_message['name'] = 'お名前は20文字以内で入力してください。';
-    }
-
-    if (empty($_POST['email'])) {
-      $error_message['email'] = 'メールアドレスを入力してください。';
-    } elseif (!preg_match( '/^[0-9a-z_.\/?-]+@([0-9a-z-]+\.)+[0-9a-z-]+$/', $_POST['email'])) {
-      $error_message['email'] = 'メールアドレスは正しい形式で入力してください。';
-    }
-
-    if (empty($_POST['body'])) {
-      $error_message['body'] = 'お問い合わせ内容を入力してください。';
-    } elseif(mb_strlen($_POST['body']) < 6) {
-      $error_message['body'] = 'お問い合わせ内容は6文字以上入力してください。';
-    }
-
-    if (empty($error_message)) {
-      $_SESSION['input_data'] = $_POST;
-      header("Location:sent.php");
-      exit();
-    }
-
-  } elseif (!empty($_SESSION['input_data'])) {
-    $_POST = $_SESSION['input_data'];
-  }
-
-  session_destroy();
-
-  function h($s) {
-    return htmlspecialchars($s,ENT_QUOTES);
-  }
-
-  function p($s) {
-    return "<p class='error'>{$s}</p>";
-  }
-
+  $session->remove('name');
+  $session->remove('email');
+  $session->remove('body');
+  $session->remove('errors');
   ?>

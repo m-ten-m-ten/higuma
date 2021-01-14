@@ -18,32 +18,33 @@ block mainSection
 
   h2 情報のご入力
   .m-form
-    form(action="form.php" method="post")
+    form(action="sent.php" method="post")
+      input(type="hidden" name="_token" value!="<?php echo $_token; ?>")
 
 
       .m-form-row
         p.m-form-title--email.m-form-required メールアドレス
         .m-form-input
-          input.email-input(type="text" name="email" value!="<?php echo isset($_POST['email']) ? h($_POST['email']) : ''; ?>" autocomplete="OFF")
+          input.email-input(type="text" name="email" value!="<?php echo $email ? $util->escape($email) : ''; ?>" autocomplete="OFF")
           p.email-caution ※お間違えのない様、ご確認ください。
           .
-            <?php echo isset($error_message['email']) ? p($error_message['email']) : ''; ?>
+            <?php echo isset($errors['email']) ? $util->displayError($errors['email']) : ''; ?>
 
 
       .m-form-row
         p.m-form-title.m-form-required お名前
         .m-form-input
-          input(type="text" name="name" value!="<?php echo isset($_POST['name']) ? h($_POST['name']) : ''; ?>" autocomplete="OFF")
+          input(type="text" name="name" value!="<?php echo $name ? $util->escape($name) : ''; ?>" autocomplete="OFF")
           .
-            <?php echo isset($error_message['name']) ? p($error_message['name']) : ''; ?>
+            <?php echo isset($errors['name']) ? $util->displayError($errors['name']) : ''; ?>
 
 
       .m-form-row
         p.m-form-title.m-form-required お問い合わせ内容
         .m-form-input
-          textarea(name="body") <?php echo isset($_POST['body']) ? h($_POST['body']) : ''; ?>
+          textarea(name="body") <?php echo $body ? $util->escape($body) : ''; ?>
           .
-            <?php echo isset($error_message['body']) ? p($error_message['body']) : ''; ?>
+            <?php echo isset($errors['body']) ? $util->displayError($errors['body']) : ''; ?>
 
 
       input.m-button--submit(type="submit" value="送信する")

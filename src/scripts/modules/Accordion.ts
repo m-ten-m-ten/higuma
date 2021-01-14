@@ -13,11 +13,9 @@ export class Accordion {
     )
     this.accordionTrigger = this.accordionWrapper.find('.accordion-trigger')
     this.bindEvent()
-
-    console.log(this.accordionTrigger)
   }
 
-  bindEvent() {
+  bindEvent(): void {
     this.accordionTrigger.on('click', $.proxy(this.slideMenu, this))
 
     $(window).on('resize', () => {
@@ -26,8 +24,7 @@ export class Accordion {
     })
   }
 
-  slideMenu() {
-    console.log(this.accordionBody.css('display'))
+  slideMenu(): void {
     if (this.accordionBody.css('display') === 'none') {
       this.accordionBody.slideDown()
       this.accordionTrigger.addClass('is-open')
