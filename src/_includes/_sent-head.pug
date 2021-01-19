@@ -9,9 +9,9 @@
     exit();
   }
 
-  $_token = $request->getPost('_token');
   $session = new Session();
   $util = new Util();
+  $_token = $request->getPost('_token');
 
   if(!$util->checkCsrfToken('form', $_token, $session)){
     header('Location:form.php');
@@ -38,9 +38,9 @@
 
   if (!strlen($body)) {
     $errors['body'] = 'お問い合わせ内容を入力してください。';
-  } elseif(mb_strlen($body) < 10) {
-    $errors['body'] = 'お問い合わせ内容は10文字以上入力してください。';
-  }
+  } elseif(mb_strlen($body) < 10 || mb_strlen($body) > 500) {
+    $errors['body'] = 'お問い合わせ内容は10文字以上500文字以内で入力してください。';
+  } 
 
   if (count($errors) > 0){
     $session->set('name', $name);
@@ -60,6 +60,7 @@
   $mailBody = "名前：${name} 様\nメールアドレス：${email}\nお問い合わせ内容：${body}\n";
 
   $mail = new Mail();
+  $resultMessage = '';
   if ($mail->sendMail($mailSubject, $mailBody)){
     $resultMessage = "お問い合わせ内容の送信が完了いたしました。回答まで数日かかる場合がありますので、ご了承下さい。";
   } else {

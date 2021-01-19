@@ -19,13 +19,13 @@ block mainSection
   h2 情報のご入力
   .m-form
     form(action="sent.php" method="post")
-      input(type="hidden" name="_token" value!="<?php echo $_token; ?>")
+      input(type="hidden" name="_token" value!="<?php echo $util->escape($_token); ?>")
 
 
       .m-form-row
         p.m-form-title--email.m-form-required メールアドレス
         .m-form-input
-          input.email-input(type="text" name="email" value!="<?php echo $email ? $util->escape($email) : ''; ?>" autocomplete="OFF")
+          input.email-input(type="text" name="email" value!="<?php echo $email ? $util->escape($email) : ''; ?>" required autocomplete="email")
           p.email-caution ※お間違えのない様、ご確認ください。
           .
             <?php echo isset($errors['email']) ? $util->displayError($errors['email']) : ''; ?>
@@ -34,7 +34,7 @@ block mainSection
       .m-form-row
         p.m-form-title.m-form-required お名前
         .m-form-input
-          input(type="text" name="name" value!="<?php echo $name ? $util->escape($name) : ''; ?>" autocomplete="OFF")
+          input(type="text" name="name" value!="<?php echo $name ? $util->escape($name) : ''; ?>" required maxlength="20")
           .
             <?php echo isset($errors['name']) ? $util->displayError($errors['name']) : ''; ?>
 
@@ -42,7 +42,7 @@ block mainSection
       .m-form-row
         p.m-form-title.m-form-required お問い合わせ内容
         .m-form-input
-          textarea(name="body") <?php echo $body ? $util->escape($body) : ''; ?>
+          textarea(name="body" required minlength="10" maxlength="500") <?php echo $body ? $util->escape($body) : ''; ?>
           .
             <?php echo isset($errors['body']) ? $util->displayError($errors['body']) : ''; ?>
 
