@@ -11,13 +11,17 @@ class Session
      */
     protected static $sessionIdRegenerated = false;
 
-    public function __costruct()
+    public function __construct()
     {
         if (!self::$sessionStarted) {
             session_start();
-
             self::$sessionStarted = true;
         }
+    }
+
+    public function getSessionStarted()
+    {
+        return self::$sessionStarted;
     }
 
     public function set($name, $value)
@@ -35,7 +39,7 @@ class Session
 
     public function remove($name)
     {
-        if(isset($_SESSION[$name])){
+        if (isset($_SESSION[$name])) {
             unset($_SESSION[$name]);
         }
     }

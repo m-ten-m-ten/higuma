@@ -9,7 +9,7 @@
   ],
   "css.validate": false,
   "scss.validate": false,
-  "php-cs-fixer.executablePath": "/Users/matsuotenmei/program/higuma_new/vendor/bin/php-cs-fixer", // パスを指定しないと動かなかった。
+  "php-cs-fixer.executablePath": "/Users/matsuotenmei/program/higuma/vendor/bin/php-cs-fixer", // パスを指定しないと動かなかった。
   "php-cs-fixer.executablePathWindows": "", //eg: php-cs-fixer.bat
   "php-cs-fixer.onsave": true, // false→trueに変更。
   "php-cs-fixer.rules": "@PSR2",
