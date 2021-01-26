@@ -7,25 +7,25 @@
 }
 
 .m-form-row {
-  @include clear-fix;
+  display: flex;
+  align-items: flex-start;
   @include mediaquery(580px) {
-    // border-bottom: 1px solid #ccc
+    display: block;
   }
 }
 
 .m-form-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 250px;
   margin: 10px 0;
   padding: 5px 10px;
-  float: left;
-  line-height: 38px;
   text-align: left;
 
   @include mediaquery(580px) {
     width: 100%;
     margin-top: 15px;
-    float: none;
-    line-height: 32px;
 
     &:first-of-type {
       margin-top: 0;
@@ -42,8 +42,7 @@
 .m-form-required:after {
   content: '必須';
   display: inline-block;
-  padding: 0 10px;
-  float: right;
+  padding: 3px 10px;
   background-color: $main-color-darker;
   color: $font-color-inverse;
 }
